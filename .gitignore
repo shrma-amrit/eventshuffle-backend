@@ -1,0 +1,39 @@
+# Node modules
+/node_modules
+
+# TypeScript build output
+/dist
+/build
+*.tsbuildinfo
+
+# Environment files
+.env
+
+# Logs
+*.log
+logs
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE/editor-specific files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# npm package lock file
+package-lock.json
+
+# Miscellaneous
+*.pem
+*.csr
+*.crt
+*.key
+
+# Local environment
+.env.local
+.env.*.local
