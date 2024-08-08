@@ -4,6 +4,7 @@
 
 - Node.js
 - MongoDB
+- OpenSSL
 
 ## Setup
 
@@ -20,14 +21,28 @@
    npm install
    ```
 
-3. Create a .env file in the root directory with the following content:
+3. Set Up MongoDB:
 
-   ```json
+   ```sh
+   brew services start mongodb-community@7.0
+   ```
+
+4. Create a .env file in the root directory with the following content:
+
+   ```env
    PORT=3000
    MONGO_URI=mongodb://localhost:27017/eventshuffle
    ```
 
-4. Start the development server:
+5. Generate SSL Certificates:
+
+   ```sh
+   openssl genrsa -out key.pem 2048
+   openssl req -new -key key.pem -out cert.csr
+   openssl x509 -req -days 365 -in cert.csr -signkey key.pem -out cert.pem
+   ```
+
+6. Start the development server:
 
    ```sh
    npm run dev

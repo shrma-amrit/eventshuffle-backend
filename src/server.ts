@@ -14,8 +14,8 @@ const init = async () => {
     port: Number(process.env.PORT) || 3000,
     host: "localhost",
     tls: {
-      key: fs.readFileSync("/Users/ayud/key.pem"),
-      cert: fs.readFileSync("/Users/ayud/cert.pem"),
+      key: fs.readFileSync(path.join(__dirname, "../key.pem")),
+      cert: fs.readFileSync(path.join(__dirname, "../cert.pem")),
     },
   });
 
