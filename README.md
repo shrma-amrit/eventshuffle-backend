@@ -37,10 +37,16 @@
 5. Generate SSL Certificates:
 
    ```sh
+   openssl genrsa -des3 -out myCA.key 2048
+   openssl req -x509 -new -nodes -key myCA.key -sha256 -days 825 -out myCA.pem
    openssl genrsa -out key.pem 2048
    openssl req -new -key key.pem -out cert.csr
    openssl x509 -req -days 365 -in cert.csr -signkey key.pem -out cert.pem
    ```
+
+   - Open the Keychain Access application.
+   - Drag your .pem file (e.g., cert.pem) into the System keychain.
+   - Double-click the certificate, expand the "Trust" section, and set "When using this certificate" to "Always Trust."
 
 6. Start the development server:
 

@@ -33,6 +33,8 @@ package-lock.json
 *.csr
 *.crt
 *.key
+*.ext
+*.srl
 
 # Local environment
 .env.local

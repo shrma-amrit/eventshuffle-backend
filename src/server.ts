@@ -14,8 +14,15 @@ const init = async () => {
     port: Number(process.env.PORT) || 3000,
     host: "localhost",
     tls: {
-      key: fs.readFileSync(path.join(__dirname, "../key.pem")),
-      cert: fs.readFileSync(path.join(__dirname, "../cert.pem")),
+      key: fs.readFileSync(path.join(__dirname, "../localhost.key")),
+      cert: fs.readFileSync(path.join(__dirname, "../localhost.crt")),
+    },
+    routes: {
+      cors: {
+        origin: ["http://localhost:5173"],
+        headers: ["Accept", "Content-Type"],
+        additionalHeaders: ["X-Requested-With"],
+      },
     },
   });
 
